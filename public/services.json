@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Home Chefs",
+        "priceBig": "20.99",
+        "priceSmall": "10.99",
+        "image": "https://i.ibb.co/Mk3J6Fg/Eating-More-Ultraprocessed-Junk-Food-Linked-to-Higher-CVD-Risk.jpg",
+        "rating": "5 Star",
+        "description": "There’s something for everyone at Home Chef. Each weekly menu includes at least 20 meal kits, all of which come with portioned ingredients and everything you’ll need to cook. You can choose from plenty of 30-ish-minute options, plus more premium recipes and 15-minute kits. As a bonus, you can filter meal options when you’re filling your box to see only low-calorie entrées. And every recipe includes thoughtful information like the difficulty level, how soon you have to cook it, and even the spice level.Home Chef delivers to 98% of the United States, and you can check your zip code during the sign-up process.You can choose between three and five meals per week and either two or four servings per meal, which include rice bowls, quesadillas, and wraps. Plus, each week’s meals come shipped in recyclable, climate-smart packaging.",
+        "features": {
+            "pera1": "Home Chefs Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Home Chefs Food Good Food.",
+            "pera3": "Home Chefs are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean sunbasket is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    },
+    {
+        "name": "Sunbasket Food",
+        "priceBig": "31.99",
+        "priceSmall": "12.99",
+        "image": "https://i.ibb.co/27XDchn/sunbasket-healthy-meal-kit.jpg",
+        "rating": "5 Star",
+        "description": "Sunbasket offers fresh meals for people with pretty much every dietary restriction, including vegans, vegetarians, pescatarians, and people who are managing diabetes or adhering to gluten-free and paleo diets. Organic ingredients like fresh produce and and antibiotic- and hormone-free meats and seafood abound. But despite the service’s healthy pedigree, it doesn’t offer bland health food; roasted gochujang salmon, Greek meatballs, and black rice bowls sound pretty great, right? And it also has ready-to-heat meals that require zero cooking at all, plus a section with meat and pantry staples that’s designed to replace grocery shopping entirely.Most zip codes in the continental United States are covered, excluding Montana, North Dakota, and parts of New Mexico.And Purple Carrot recently added a prepared meal option too, allowing you to heat up your meals of choice. Allegedly, Gisele Bündchen is a fan, which should be enough of a selling point, but eating a plant-based diet is also good for you and the environment. Everyone wins!",
+        "features": {
+            "pera1": "Sunbasket Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Sunbasket Food Good Food.",
+            "pera3": " sun basket are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean Purple Carrot is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    },
+    {
+        "name": "Purple Carrot",
+        "priceBig": "44.99",
+        "priceSmall": "13.99",
+        "image": "https://i.ibb.co/Kr7QjQd/60352415-2394610764107864-2561340103867760640-o.jpg",
+        "rating": "4.5 Star",
+        "description": "With new vegan recipes every week, Purple Carrot is the most convenient way to eat more plant-based meals. The brand’s veggie-powered meal kits are packed with seasonal ingredients, and you can choose them based on categories like high-protein, gluten-free, and Chef’s Choice, which features more innovative recipes. And Purple Carrot recently added a prepared meal option too, allowing you to heat up your meals of choice. Allegedly, Gisele Bündchen is a fan, which should be enough of a selling point, but eating a plant-based diet is also good for you and the environment. Everyone wins!You can choose between three and five meals per week and either two or four servings per meal, which include rice bowls, quesadillas, and wraps. Plus, each week’s meals come shipped in recyclable, climate-smart packaging.",
+        "features": {
+            "pera1": "Purple Carrot Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Purple Carrot Food Good Food.",
+            "pera3": " Purple Carrot are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean Purple Carrot is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    },
+    {
+        "name": "Dinnerly Noodless",
+        "priceBig": "30.99",
+        "priceSmall": "15.99",
+        "image": "https://i.ibb.co/6HLKxtC/15-Minute-Garlic-Fried-Noodles-2.jpg",
+        "rating": "5 Star",
+        "description": " Dinnerly’s menu is filled with easy-to-make, delicious, and healthy meals for someone who doesn’t have a lot of time but loves to cook. But even more important, it’s affordable, at a few bucks per adult serving. Fewer ingredients and digital recipe cards are two ways they help keep costs down, and whether you’re an adventurous eater or someone whose palate isn’t the most devil-may-care, there are a ton of recipe options to choose from. We love the chicken satay noodles, BBQ chicken flatbread, and stuffed baked potatoes.including veggie pot pie, Thai peanut curry, and sweet potato chili bake—includes at least four varieties of vegetables and no added sugar. Its single-serving bowls and soups are just as healthy—and so much healthier than takeout. And all of the service’s packaging is much.",
+        "features": {
+            "pera1": "Dinnerly Noodless Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Dinnerly Noodless Food Good Food.",
+            "pera3": "Dinnerly Noodless are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean Dinnerly Noodless is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    },
+    {
+        "name": "Fish Curry Home",
+        "priceBig": "50.99",
+        "priceSmall": "21.99",
+        "image": "https://i.ibb.co/VSTYVhT/recipe-curry-fish-malay-800x501.jpg",
+        "rating": "4.5 Star",
+        "description": " Home Fish menu is filled with easy-to-make, delicious, and healthy meals for someone who doesn’t have a lot of time but loves to cook. But even more important, it’s affordable, at a few bucks per adult serving. Fewer ingredients and digital recipe cards are two ways they help keep costs down, and whether you’re an adventurous eater or someone whose palate isn’t the most devil-may-care, there are a ton of recipe options to choose from. We love the chicken satay noodles, BBQ chicken flatbread, and stuffed baked potatoes.including veggie pot pie, Thai peanut curry, and sweet potato chili bake—includes at least four varieties of vegetables and no added sugar. Its single-serving bowls and soups are just as healthy—and so much healthier than takeout. And all of the service’s packaging is much.",
+        "features": {
+            "pera1": "Fish Curry Home Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Fish Curry Home Food Good Food and Heathy.",
+            "pera3": "Fish Curry Home are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean Fish Curry Home is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    },
+    {
+        "name": "Snap Kitchen",
+        "priceBig": "41.99",
+        "priceSmall": "31.99",
+        "image": "https://i.ibb.co/DVQX2fQ/snap-kitchen-healthy-meal-delivery-service.jpg",
+        "rating": "4.5 Star",
+        "description": "Snap Kitchen offers you the freedom of choice. So. Much. Choice. Yes, you can choose a low-carb or keto-friendly subscription, but you could also build your own completely from scratch or opt to try an edited selection with a little bit of everything. If you have specific calorie goals, you can customize those as well. With this degree of customization, it’s no surprise that Snap Kitchen caters to people who follow all sorts of diets (from dairy-free to pescatarian). Pro tip: Order the crunchy coconut shrimp and over-easy burger with sweet potato for a transcendent mealtime experience.Dogg’s BFF), Martha Stewart & Marley Spoon offers at least 45 Martha-approved recipes each week. They’re all designed with easy weeknight cooking in mind, and you can select meal delivery kits each week, ranging from buttery garlic chicken to pan-roasted steak. You can plan up to five weeks ahead and skip a week when the timing isn’t perfec",
+        "features": {
+            "pera1": "Snap Kitchen Food are among the world’s best sources of potassium. They’re also high in vitamin B6 and fiber and are convenient and portable",
+            "pera2": "Snap Kitchen Food Good Food and Heathy.",
+            "pera3": "Snap Kitchen are not only delicious but also among the most powerful sources of antioxidants in the world.",
+            "pera4": "Lean Snap Kitchen is among the best sources of protein when consumed in moderation and is loaded"
+        }
+    }
+]
