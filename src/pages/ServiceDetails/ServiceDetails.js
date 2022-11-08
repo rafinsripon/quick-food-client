@@ -7,27 +7,25 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { _id, image, name, description, priceBig, priceSmall, rating } =
     details;
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const message = form.message.value;
-      console.log(message);
+  const handlePlaceOrder = (event) => {
+    event.preventDefault()
+    const form = event.target;
+    const message = form.message.value;
+    console.log(message);
 
-
-      const order = {
-        service: _id,
-        customerEmail: user.email,
-        customerName: user.displayName,
-        customerPhoto: user.photoURL,
-        message,
-      }
-
+    const order = {
+      service: _id,
+      customerEmail: user.email,
+      customerName: user.displayName,
+      customerPhoto: user.photoURL,
+      message,
     }
-
+    console.log(order)
+  };
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
@@ -100,7 +98,9 @@ const ServiceDetails = () => {
       </div>
       {/* =====reviews section== */}
       <div className="mt-6">
-      <h2 className="text-4xl font-bold uppercase text-sky-700 px-16 mb-3">Reviews</h2>
+        <h2 className="text-4xl font-bold uppercase text-sky-700 px-16 mb-3">
+          Reviews
+        </h2>
         <div className="container px-12 flex flex-col w-full max-w-2xl p-6 divide-y divide-gray-700 dark:text-gray-900">
           <div className="flex justify-between p-4">
             <div className="flex space-x-4 items-center">
@@ -139,20 +139,26 @@ const ServiceDetails = () => {
             </p>
           </div>
           <div className="flex flex-col w-full">
-            <form onSubmit={handleSubmit}>
-              <textarea
-                rows="3"
-                name="message"
-                placeholder="Type your reviews"
-                className="p-4 rounded-md resize-none border-2 mt-2 border-gray-500 dark:text-gray-900 w-full"
-              ></textarea>
+            <form onSubmit={handlePlaceOrder}>
+              <div className="col-span-full">
+                <label
+                  htmlFor="message"
+                  className="text-lg font-semibold block "
+                >
+                  Type Reviews*
+                </label>
+                <textarea
+                  name="message"
+                  className="textarea h-28 rounded-md textarea-bordered w-full"
+                  placeholder="Bio"
+                ></textarea>
+                <div className="">
+                  <button className="block w-full rounded-3xl p-3 text-center text-gray-100 font-bold bg-sky-600 mt-4">
+                    Add Rewviews
+                  </button>
+                </div>
+              </div>
             </form>
-            <button
-              type="button"
-              className="py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400"
-            >
-              Add Reviews
-            </button>
           </div>
         </div>
       </div>
