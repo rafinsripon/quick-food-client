@@ -1,8 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {user, logOut} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+      logOut()
+      .then(() => {
+        navigate('/')
+      })
+      .catch(error => {
+        console.log('logout error', error)
+      })
+    }
   return (
     <div className="rounded-lg shadow-xl">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -67,17 +80,21 @@ const Header = () => {
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            <li>
-              <Link
+          <li>
+              {
+                user?.email ? 
+                <>
+                  <button onClick={handleLogOut} className='font-medium text-gray-900 ml-4'>Log Out</button>
+                </> :
+                <>
+                  <Link
                 to="/login"
-                aria-label="Log in"
-                title="Log in"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                aria-label="About us"
+                title="About us"
+                className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Login
+                Log In
               </Link>
-            </li>
-            <li>
               <Link
                 to="/register"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-slate-900 transition duration-200 rounded hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
@@ -86,6 +103,8 @@ const Header = () => {
               >
                 Register
               </Link>
+                </>
+              }
             </li>
           </ul>
           <div className="lg:hidden">
