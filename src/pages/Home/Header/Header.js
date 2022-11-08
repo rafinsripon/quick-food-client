@@ -77,13 +77,26 @@ const Header = () => {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/myreview"
+                  aria-label="Our product"
+                  title="Our product"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  My Reviews
+                </Link>
+              </li>
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
+              <div className="flex items-center gap-4">
               {
-                user?.email ? 
+                user?.uid ? 
                 <>
+                <span className='fw-bold fs-5 text-secondary'>{user?.displayName}</span>
+                <img className='w-8 h-8 rounded-full border-2 border-pink-600 cursor-pointer' src={user?.photoURL} alt="" />
                   <button onClick={handleLogOut} className='font-medium text-gray-900 ml-4'>Log Out</button>
                 </> :
                 <>
@@ -105,6 +118,7 @@ const Header = () => {
               </Link>
                 </>
               }
+              </div>
             </li>
           </ul>
           <div className="lg:hidden">

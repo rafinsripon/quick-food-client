@@ -5,7 +5,7 @@ import login from '../../Assets/Images/Screenshot_25-removebg-preview.png'
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Register = () => {
-    const {createUser, signWithGoogle} = useContext(AuthContext);
+    const {createUser, signWithGoogle, updateUseProfile} = useContext(AuthContext);
     const navigate = useNavigate()
 
     const handleSubmit = (event) => {
@@ -14,13 +14,14 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,email, password);
+        // console.log(name,email, password);
 
         createUser(email, password)
         .then((result) => {
             const user = result.user;
             form.reset();
-            navigate('/')
+            navigate('/');
+            handleUpdateUserProfile(name)
             console.log('Sign Up Success:', user);
         })
         .catch((error) => {
@@ -28,6 +29,17 @@ const Register = () => {
             console.log("Sign Up error:", errorMessage);
         })
 
+    }
+    //update user profile form Firebase
+    const handleUpdateUserProfile = (name) => {
+        const profile = {
+            displayName: name
+        }
+        updateUseProfile(profile)
+        .then(() => {})
+        .catch(error => {
+            console.log("upaded profile Error", error)
+        })
     }
     //Sign With Google
     const handleGooleSignUp = () => {

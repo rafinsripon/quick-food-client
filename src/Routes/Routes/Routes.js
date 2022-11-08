@@ -4,6 +4,7 @@ import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Login/Register";
+import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />
+            },
+            {
+                path: '/myreview',
+                element: <MyReview />
             },
             {
                 path: '/login',
