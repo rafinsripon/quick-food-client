@@ -4,6 +4,7 @@ import bannerD from "../../Assets/Images/details.jpg";
 import { FcNext } from "react-icons/fc";
 import author from "../../Assets/Images/author.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-toastify";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
@@ -40,7 +41,7 @@ const ServiceDetails = () => {
     .then(res => res.json())
     .then(data => {
       if(data.acknowledged){
-        alert('reviews done')
+        toast('🦄 Wow Success Fully reviews added!', {autoClose: 500})
         form.reset()
       }
       // console.log('reviews-data:', data);

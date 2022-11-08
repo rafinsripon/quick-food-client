@@ -20,7 +20,7 @@ const Services = () => {
                   <svg
                     viewBox="0 0 52 24"
                     fill="currentColor"
-                    className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                    className="absolute top-0 left-0 -z-50 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
                   >
                     <defs>
                       <pattern
@@ -39,7 +39,7 @@ const Services = () => {
                       height="24"
                     />
                   </svg>
-                  <span className="relative">Online Home Best</span>
+                  <span className="relative -z-50">Online Home Best</span>
                 </span>{" "}
                 services In My Food
               </h2>
