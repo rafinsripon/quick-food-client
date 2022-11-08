@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MyReviewsRow = ({ reviews }) => {
+
+const MyReviewsRow = ({ reviews, handleDelete, handleUpdate }) => {
   const {
+    _id,
     photo,
     email,
     name,
@@ -12,6 +15,7 @@ const MyReviewsRow = ({ reviews }) => {
     rating,
     serviceName,
   } = reviews;
+
   return (
     <div className="mt-6 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 w-full mb-10">
       <div className="container px-12 flex flex-col w-full max-w-2xl p-3 divide-y divide-gray-700 dark:text-gray-900 border-4 border-gray-300 rounded-3xl">
@@ -57,10 +61,12 @@ const MyReviewsRow = ({ reviews }) => {
             </div>
           <p className="pb-4 lg:text-lg text-base font-bold">{message}</p>
           <div className="flex justify-between mt-8 gap-4">
+            <Link to={`/updated/${_id}`}>
             <button className="bg-sky-600 py-3 px-12 font-bold text-gray-100 rounded-3xl">
               Update
             </button>
-            <button className="bg-rose-700 py-3 px-12 font-bold text-gray-100 rounded-3xl">
+            </Link>
+            <button onClick={() => handleDelete(_id)} className="bg-rose-700 py-3 px-12 font-bold text-gray-100 rounded-3xl">
               Delete
             </button>
           </div>

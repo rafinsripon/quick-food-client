@@ -19,8 +19,8 @@ const ServiceDetails = () => {
 
     const reviews = {
       service: _id,
-      email: user.email,
-      photo: user.photoURL,
+      email: user?.email,
+      photo: user?.photoURL,
       name: user?.displayName,
       serviceName: name,
       image,
@@ -158,9 +158,11 @@ const ServiceDetails = () => {
             </p>
           </div>
           <div className="flex flex-col w-full">
-            <form onSubmit={handlePlaceOrder}>
+          <form onSubmit={handlePlaceOrder}>
               <div className="col-span-full">
-                <label
+                {
+                  user ? <>
+                  <label
                   htmlFor="message"
                   className="text-lg font-bold block mt-2"
                 >
@@ -171,13 +173,18 @@ const ServiceDetails = () => {
                   className="textarea text-xl h-28 rounded-md textarea-bordered w-full"
                   placeholder="Bio"
                 ></textarea>
+                  </> :
+                  <>
+                  <p className="text-4xl font-bold text-rose-700 mt-2 mb-4">Please! login to add a review.</p>
+                  </>
+                }
                 <div className="">
                   <button className="block w-full rounded-3xl p-3 text-center text-gray-100 font-bold bg-sky-600 mt-4">
                     Add Rewviews
                   </button>
                 </div>
               </div>
-            </form>
+            </form> 
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const Header = () => {
     }
   return (
     <div className="rounded-lg shadow-xl">
-      <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center">
             <Link
@@ -96,7 +96,7 @@ const Header = () => {
                 user?.uid ? 
                 <>
                 <span className='text-xl font-bold'>{user?.displayName}</span>
-                <img className='w-8 h-8 rounded-full border-2 border-pink-600 cursor-pointer' src={user?.photoURL} alt="" />
+                <img className='w-10 h-10 rounded-full border-2 border-pink-600 cursor-pointer' src={user?.photoURL} alt="" />
                   <button onClick={handleLogOut} className='font-bold  text-xl text-gray-900 ml-4'>Log Out</button>
                 </> :
                 <>
