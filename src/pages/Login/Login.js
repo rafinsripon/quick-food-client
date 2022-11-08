@@ -3,12 +3,14 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../Assets/Images/Screenshot_25-removebg-preview.png'
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/UseTitle';
 
 const Login = () => {
     const {logIn, signWithGoogle} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    useTitle('login');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +43,6 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true });
             })
-            // console.log('LogIn Success:', user);
         })
         .catch((error) => {
             const errorMessage = error.message;

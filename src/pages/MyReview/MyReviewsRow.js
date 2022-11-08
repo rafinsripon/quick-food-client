@@ -16,9 +16,10 @@ const MyReviewsRow = ({ reviews, handleDelete, handleUpdate }) => {
     serviceName,
   } = reviews;
 
+
   return (
     <div className="mt-6 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 w-full mb-10">
-      <div className="container px-12 flex flex-col w-full max-w-2xl p-3 divide-y divide-gray-700 dark:text-gray-900 border-4 border-gray-300 rounded-3xl">
+      <div className="container lg:px-12 px-0 flex flex-col w-full max-w-2xl p-3 divide-y divide-gray-700 dark:text-gray-900 border-4 border-gray-300 rounded-3xl">
         <div className="flex justify-between p-2">
           <div className="flex space-x-4 items-center">
             <div>

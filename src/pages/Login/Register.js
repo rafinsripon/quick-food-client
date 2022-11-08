@@ -3,10 +3,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import login from '../../Assets/Images/Screenshot_25-removebg-preview.png'
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/UseTitle';
 
 const Register = () => {
     const {createUser, signWithGoogle, updateUseProfile} = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    useTitle('register')
 
     const handleSubmit = (event) => {
         event.preventDefault();

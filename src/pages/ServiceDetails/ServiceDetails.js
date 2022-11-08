@@ -5,12 +5,14 @@ import { FcNext } from "react-icons/fc";
 import author from "../../Assets/Images/author.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import useTitle from "../../hooks/UseTitle";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
   const { _id, image, name, description, priceBig, priceSmall, rating } =
     details;
+  useTitle('services details')
 
   const handlePlaceOrder = (event) => {
     event.preventDefault()
@@ -51,18 +53,18 @@ const ServiceDetails = () => {
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
       <div>
-        <img className="w-full object-cover rounded-lg" src={bannerD} alt="" />
+        <img className="w-full lg:h-auto h-[180px] object-cover rounded-lg" src={bannerD} alt="" />
       </div>
       {/* ==header== */}
       <div className="cateContainer mt-2 border-b-slate-200 border-2 p-2 flex items-center px-4 py-5 md:px-14 lg:px-16 lg:w-full w-full mx-auto justify-between">
-        <div className="cateHeader flex items-center">
+        <div className="cateHeader  flex lg:justify-start justify-center lg:flex lg:gap-0 gap-6 flex-wrap items-center">
           <Link
             className="text-2xl font-semibold text-slate-700 px-8 underline"
             to="/"
           >
             Home
           </Link>
-          <span className="text-2xl">
+          <span className="text-2xl lg:inline-block hidden">
             <FcNext />
           </span>
           <Link
@@ -76,7 +78,7 @@ const ServiceDetails = () => {
           </Link>
         </div>
       </div>
-      <div className="px-14 mt-12">
+      <div className="lg:px-14 px-0 mt-12">
         <div className="border-4 border-gray-200 p-3 rounded-lg">
           <div className="flex space-x-4 mb-2">
             <img
@@ -121,7 +123,7 @@ const ServiceDetails = () => {
         <h2 className="text-4xl font-bold uppercase text-sky-700 px-16 mb-3">
           Reviews
         </h2>
-        <div className="container px-12 flex flex-col w-full max-w-2xl p-6 divide-y divide-gray-700 dark:text-gray-900">
+        <div className="container lg:px-12 px-0 flex flex-col w-full max-w-2xl lg:p-6 p-0 divide-y divide-gray-700 dark:text-gray-900">
           <div className="flex justify-between p-4">
             <div className="flex space-x-4 items-center">
               <div>

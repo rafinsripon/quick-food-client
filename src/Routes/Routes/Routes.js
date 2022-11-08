@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
+import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Login/Register";
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
@@ -40,9 +42,13 @@ export const router = createBrowserRouter([
                 </PrivateRoutes>,
             },
             {
+                path: '/blog',
+                element: <Blog />
+            },
+            {
                 path: '/updated/:id',
                 element: <Updated />,
-                loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
             },
             {
                 path: '/login',

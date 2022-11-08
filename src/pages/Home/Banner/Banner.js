@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "../../../Assets/Images/banner3.png";
 
 const Banner = () => {
@@ -22,15 +23,7 @@ const Banner = () => {
             Enjoy our seasonal menu and experience the beauty of naturalness. A new way to experience food
             </p>
           </div>
-          <div className="flex flex-col items-center md:flex-row">
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              Learn more
-            </a>
-          </div>
+          <button className="text-white bg-sky-600 py-2 px-14 rounded-3xl">Learn More</button>
         </div>
       </div>
       <div className="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">

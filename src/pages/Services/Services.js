@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/UseTitle";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const services = useLoaderData()
+  useTitle('services')
   return (
     <div className="mt-14 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
