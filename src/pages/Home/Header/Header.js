@@ -13,7 +13,7 @@ const Header = () => {
     logOut()
       .then(() => {
         navigate("/");
-        toast.success("SuccesFully Log Out");
+        toast.success("SuccesFully Log Out", {autoClose: 500});
       })
       .catch((error) => {
         console.log("logout error", error);
@@ -74,6 +74,16 @@ const Header = () => {
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   My Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/addservices"
+                  aria-label="Our product"
+                  title="Our product"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  Add Services
                 </Link>
               </li>
             </ul>
@@ -206,6 +216,26 @@ const Header = () => {
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Blog
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/myreview"
+                          aria-label="Our product"
+                          title="Our product"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          My Reviews
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/addservices"
+                          aria-label="Our product"
+                          title="Our product"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Add Services
                         </Link>
                       </li>
                       <li>
