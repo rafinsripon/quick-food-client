@@ -15,12 +15,12 @@ const HomeService = () => {
         <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
             <div>
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-gray-200 uppercase rounded-full bg-rose-700">
+            <p className="inline-block px-3 py-px mb-4 text-lg font-semibold tracking-wider text-gray-200 uppercase rounded-full bg-rose-700">
               Services
             </p>
           </div>
-            <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-xl md:mb-12">
+              <h2 className="max-w-lg mb-6 font-sans lg:text-5xl text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                 <span className="relative inline-block">
                   <svg
                     viewBox="0 0 52 24"

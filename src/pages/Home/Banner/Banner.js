@@ -9,11 +9,11 @@ const Banner = () => {
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <div className="max-w-xl mb-6">
             <div>
-              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-gray-200 uppercase rounded-full bg-rose-700">
+              <p className="inline-block px-3 py-px mb-4 text-sm font-semibold tracking-wider text-gray-200 uppercase rounded-full bg-rose-700">
                 welcome My quick Home Food
               </p>
             </div>
-            <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight lg:text-5xl text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight lg:text-6xl text-gray-900 sm:text-4xl sm:leading-none">
              The Best Online
               <br className="hidden md:block" />
               Delivery In My Home

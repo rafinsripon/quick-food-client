@@ -17,14 +17,34 @@ const ServiceDetails = () => {
     const message = form.message.value;
     console.log(message);
 
-    const order = {
+    const reviews = {
       service: _id,
-      customerEmail: user.email,
-      customerName: user.displayName,
-      customerPhoto: user.photoURL,
+      email: user.email,
+      photo: user.photoURL,
+      name: user?.displayName,
+      serviceName: name,
+      image,
       message,
+      rating,
+      priceBig,
+      priceSmall
     }
-    console.log(order)
+    // console.log(reviews)
+    fetch('http://localhost:5000/reviews', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(reviews)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.acknowledged){
+        alert('reviews done')
+        form.reset()
+      }
+      // console.log('reviews-data:', data);
+    })
   };
 
   return (
@@ -64,8 +84,7 @@ const ServiceDetails = () => {
               className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"
             />
             <div className="flex flex-col space-y-1">
-              <p>Tomas Load</p>
-              <span className="text-xs dark:text-gray-400">4 hours ago</span>
+              <p className="text-2xl font-bold text-slate-900">Tomas Load</p>
             </div>
           </div>
           <div>
@@ -112,7 +131,7 @@ const ServiceDetails = () => {
                 />
               </div>
               <div>
-                <h4 className="font-bold">{user?.displayName}</h4>
+                <h4 className="font-bold text-2xl uppercase">{user?.displayName}</h4>
               </div>
             </div>
             <div className="flex items-center space-x-2 dark:text-yellow-500">
@@ -126,7 +145,7 @@ const ServiceDetails = () => {
               <span className="text-xl font-bold">{rating}</span>
             </div>
           </div>
-          <div className="p-4 space-y-2 text-sm dark:text-gray-400">
+          <div className="p-4 space-y-2 text-lg dark:text-gray-400">
             <p>
               Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu
               dictum lectus consequat vitae. Etiam ut dolor id justo fringilla
@@ -143,13 +162,13 @@ const ServiceDetails = () => {
               <div className="col-span-full">
                 <label
                   htmlFor="message"
-                  className="text-lg font-semibold block "
+                  className="text-lg font-bold block mt-2"
                 >
                   Type Reviews*
                 </label>
                 <textarea
                   name="message"
-                  className="textarea h-28 rounded-md textarea-bordered w-full"
+                  className="textarea text-xl h-28 rounded-md textarea-bordered w-full"
                   placeholder="Bio"
                 ></textarea>
                 <div className="">

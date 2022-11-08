@@ -18,7 +18,7 @@ const Header = () => {
     }
   return (
     <div className="rounded-lg shadow-xl">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center">
             <Link
@@ -46,7 +46,7 @@ const Header = () => {
                 Quick Food
               </span>
             </Link>
-            <ul className="flex items-center hidden space-x-8 lg:flex">
+            <ul className="flex items-center hidden space-x-8 lg:flex text-xl font-bold">
               <li>
                 <Link
                   to="/"
@@ -95,22 +95,22 @@ const Header = () => {
               {
                 user?.uid ? 
                 <>
-                <span className='fw-bold fs-5 text-secondary'>{user?.displayName}</span>
+                <span className='text-xl font-bold'>{user?.displayName}</span>
                 <img className='w-8 h-8 rounded-full border-2 border-pink-600 cursor-pointer' src={user?.photoURL} alt="" />
-                  <button onClick={handleLogOut} className='font-medium text-gray-900 ml-4'>Log Out</button>
+                  <button onClick={handleLogOut} className='font-bold  text-xl text-gray-900 ml-4'>Log Out</button>
                 </> :
                 <>
                   <Link
                 to="/login"
                 aria-label="About us"
                 title="About us"
-                className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                className="font-bold text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Log In
               </Link>
               <Link
                 to="/register"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-slate-900 transition duration-200 rounded hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-12 px-6 font-bold text-xl tracking-wide text-slate-900 transition duration-200 rounded hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 aria-label="Sign up"
                 title="Sign up"
               >

@@ -11,17 +11,17 @@ const HomeServiceCard = ({service}) => {
           alt="Img Not Found"
         />
         <div className="p-5 border border-t-0">
-          <h2 className="text-2xl font-bold text-slate-900">{name}</h2>
-          <p className="mb-2 text-gray-700">
+          <h2 className="text-3xl font-bold text-slate-900">{name}</h2>
+          <p className="mb-2 font-bold text-gray-600 mt-2">
             {description.slice(0, 95) + "..."}
           </p>
-          <div className="flex items-centen justify-between">
-            <p className="font-bold text-lg text-sky-800">
+          <div className="flex items-centen justify-between mt-2">
+            <p className="font-bold text-xl text-sky-800">
               Small: ${priceSmall}
             </p>
             <p className="font-bold text-lg text-sky-800">Large: ${priceBig}</p>
           </div>
-          <span className="text-lg font-bold block text-orange-500">
+          <span className="text-xl font-bold block text-orange-500 mt-2">
             Ratings: {rating}
           </span>
           <Link
@@ -29,7 +29,7 @@ const HomeServiceCard = ({service}) => {
                 aria-label=""
                 className="mt-2 inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 w-full"
             >
-                <button className="text-lg font-semibold bg-sky-700 py-1 p-2 block w-full text-white">Details</button>
+                <button className="text-lg font-semibold bg-sky-700 py-2 p-2 block w-full text-white">Details</button>
         </Link>
         </div>
       </div>
