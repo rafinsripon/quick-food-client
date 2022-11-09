@@ -6,7 +6,7 @@ import author from "../../Assets/Images/author.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import useTitle from "../../hooks/UseTitle";
-import avater from "../../Assets/Images/avater.jpg"
+import avater from "../../Assets/Images/avater.jpg";
 import AllReviews from "./AllReviews";
 
 const ServiceDetails = () => {
@@ -14,12 +14,12 @@ const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const { _id, image, name, description, priceBig, priceSmall, rating } =
     details;
-  const [reviewsService, setReviewsService] = useState([])
+  const [reviewsService, setReviewsService] = useState([]);
 
-  useTitle('services details')
+  useTitle("services details");
 
   const handlePlaceOrder = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const form = event.target;
     const message = form.message.value;
     console.log(message);
@@ -36,35 +36,39 @@ const ServiceDetails = () => {
       priceBig,
       priceSmall,
       time: new Date().toLocaleString(),
-    }
+    };
     // console.log(reviews)
-    fetch('http://localhost:5000/reviews', {
-      method: 'POST',
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(reviews)
+      body: JSON.stringify(reviews),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.acknowledged){
-        toast('🦄 Wow Success Fully reviews added!', {autoClose: 500})
-        form.reset()
-      }
-      // console.log('reviews-data:', data);
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast("🦄 Wow Success Fully reviews added!", { autoClose: 500 });
+          form.reset();
+        }
+        // console.log('reviews-data:', data);
+      });
   };
 
-  useEffect( () => {
+  useEffect(() => {
     fetch(`http://localhost:5000/review`)
-    .then(res => res.json())
-    .then(data => setReviewsService(data))
-  },[])
+      .then((res) => res.json())
+      .then((data) => setReviewsService(data));
+  }, []);
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
       <div>
-        <img className="w-full lg:h-auto h-[180px] object-cover rounded-lg" src={bannerD} alt="" />
+        <img
+          className="w-full lg:h-auto h-[180px] object-cover rounded-lg"
+          src={bannerD}
+          alt=""
+        />
       </div>
       {/* ==header== */}
       <div className="cateContainer mt-2 border-b-slate-200 border-2 p-2 flex items-center px-4 py-5 md:px-14 lg:px-16 lg:w-full w-full mx-auto justify-between">
@@ -135,43 +139,44 @@ const ServiceDetails = () => {
           Reviews
         </h2>
         <div className="container lg:px-12 px-0 flex flex-col w-full lg:p-6 p-0 divide-y divide-gray-700 dark:text-gray-900">
-          
-          <div className="grid grid-cols-3 gap-3">
-            {
-              reviewsService?.map(reviews => <AllReviews 
-                key={reviews._id}
-                reviews={reviews}
-              />)
-            }
-          </div>
-          <div className="flex flex-col w-full">
-          <form onSubmit={handlePlaceOrder}>
-              <div className="col-span-full">
-                {
-                  user ? <>
-                  <label
-                  htmlFor="message"
-                  className="text-lg font-bold block mt-2"
-                >
-                  Type Reviews*
-                </label>
-                <textarea
-                  name="message"
-                  className="textarea text-xl h-28 rounded-md textarea-bordered w-full"
-                  placeholder="Bio"
-                ></textarea>
-                  </> :
-                  <>
-                  <p className="text-4xl font-bold text-rose-700 mt-2 mb-4">Please! login to add a review.</p>
-                  </>
-                }
-                <div className="">
-                  <button className="block w-full rounded-3xl p-3 text-center text-gray-100 font-bold bg-sky-600 mt-4">
-                    Add Rewviews
-                  </button>
+          {user && <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {reviewsService?.map((reviews) => (
+              <AllReviews key={reviews._id} reviews={reviews} />
+            ))}
+          </div>}
+          <div className="flex flex-col">
+            <div className="lg:w-[70%] w-full">
+              <form onSubmit={handlePlaceOrder}>
+                <div className="col-span-full">
+                  {user ? (
+                    <>
+                      <label
+                        htmlFor="message"
+                        className="text-lg font-bold block mt-2 mb-2"
+                      >
+                        Type Reviews*
+                      </label>
+                      <textarea
+                        name="message"
+                        className="textarea text-xl h-32 rounded-md textarea-bordered w-full border-2 border-gray-500"
+                        placeholder="Type Your Review"
+                      ></textarea>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-4xl font-bold text-rose-700 mt-2 mb-4">
+                        Please! <Link to='/login' className="underline text-sky-700">Login</Link> to add a review.
+                      </p>
+                    </>
+                  )}
+                  <div className="">
+                    <button className="block w-full rounded-3xl p-3 text-center text-gray-100 font-bold bg-sky-600 mt-4">
+                      Add Rewviews
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </form> 
+              </form>
+            </div>
           </div>
         </div>
       </div>

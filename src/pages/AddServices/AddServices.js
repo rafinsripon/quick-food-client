@@ -20,9 +20,9 @@ const AddServices = () => {
         const rating = form.rating.value;
         const image = form.image.value;
         const description = form.description.value;
-        // console.log(name, price, photourl, rating, message);
         const service = {name, priceBig, rating, image, description}
-        console.log(service)
+        // console.log(service)
+
         fetch('http://localhost:5000/services', {
           method: 'POST',
           headers: {
@@ -43,10 +43,9 @@ const AddServices = () => {
 
 
   return (
-    <div className="w-2/3 mx-auto px-12 shadow-xl">
+    <div className="lg:w-2/3 w-full mx-auto lg:px-12 px-4 shadow-xl">
       <div>
-        {/* <h2>single user: {services.length}</h2> */}
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-24 lg:p-0">
+        <div className="px-4 lg:py-16 pt-16 pb-0 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-24 lg:p-0">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
             <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
               <Link href="/" className="mb-6 sm:mx-auto">
@@ -91,7 +90,7 @@ const AddServices = () => {
                         height="24"
                       />
                     </svg>
-                    <span className="relative">Welcome</span>
+                    <span className="relative -z-50">Welcome</span>
                   </span>{" "}
                   To Add Your Best Services.
                 </h2>
@@ -114,7 +113,7 @@ const AddServices = () => {
           />
         </div>
         <div className="lg:flex flex-wrap gap-4 justify-between mt-4">
-          <div className="w-[45%]">
+          <div className="lg:w-[45%] w-full">
             <input
               type="text"
               name="priceBig"
@@ -122,7 +121,7 @@ const AddServices = () => {
               className="input input-bordered input-info w-full"
             />
           </div>
-          <div className="w-[45%]">
+          <div className="lg:w-[45%] w-full lg:pt-0 pt-4">
             <input
               type="text"
               name="rating"

@@ -55,7 +55,7 @@ const MyReviewsRow = ({ reviews, handleDelete }) => {
                 </h2>
                 <div className="flex  items-center gap-8">
                   <p className="text-lg font-bold text-sky-600">
-                    Large: ${priceBig}
+                    Price: ${priceBig}
                   </p>
                 </div>
               </div>
