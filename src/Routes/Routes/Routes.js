@@ -44,7 +44,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/addservices',
-                element: <AddServices />
+                element: <PrivateRoutes>
+                    <AddServices />
+                </PrivateRoutes>
             },
             {
                 path: '/updated/:id',

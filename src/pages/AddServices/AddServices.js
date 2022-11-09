@@ -1,10 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AddServices = () => {
+  // const services = useLoaderData()
+  // // const [services, setService] = useState(servicesU)
+
+  // // useEffect(() => {
+  // //   fetch('http://localhost:5000/services')
+  // //   .then(res => res.json())
+  // //   .then(data => setService(data))
+  // // },[])
+
+
+  const handleServiceAdd = (event) => {
+    event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const priceBig = `${form.priceBig.value}`;
+        const rating = form.rating.value;
+        const image = form.image.value;
+        const description = form.description.value;
+        // console.log(name, price, photourl, rating, message);
+        const service = {name, priceBig, rating, image, description}
+        console.log(service)
+        fetch('http://localhost:5000/services', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(service)
+        })
+        .then(res => res.json())
+        .then(data => {
+          // console.log(data)
+          
+          if(data.acknowledged){
+            // service.push()
+            alert('added')
+          }
+        })
+  }
+
+
   return (
     <div className="w-2/3 mx-auto px-12 shadow-xl">
       <div>
+        {/* <h2>single user: {services.length}</h2> */}
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-24 lg:p-0">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
             <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
@@ -63,7 +104,7 @@ const AddServices = () => {
           </div>
         </div>
       </div>
-      <form>
+      <form onSubmit={handleServiceAdd}>
         <div>
           <input
             type="text"
@@ -76,7 +117,7 @@ const AddServices = () => {
           <div className="w-[45%]">
             <input
               type="text"
-              name="price"
+              name="priceBig"
               placeholder="service price"
               className="input input-bordered input-info w-full"
             />
@@ -93,13 +134,15 @@ const AddServices = () => {
         <div className="mt-4">
           <input
             type="text"
-            name="photo"
+            name="image"
             placeholder="photo url"
             className="input input-bordered input-info w-full"
           />
         </div>
         <div className="mt-4">
           <textarea
+          type="text"
+          name="description"
             className="textarea textarea-info w-full h-[170px]"
             placeholder="service description"
           ></textarea>

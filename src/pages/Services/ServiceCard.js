@@ -4,7 +4,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceCard = ({ service }) => {
-  const {_id, image, name, description, priceBig, priceSmall, rating } = service;
+  const {_id, image, name, description, priceBig, rating } = service;
   return (
     <div className="">
       <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm mb-8">
@@ -16,17 +16,15 @@ const ServiceCard = ({ service }) => {
         <div className="p-5 border border-t-0">
           <h2 className="text-3xl font-bold text-slate-900">{name}</h2>
           <p className="mb-2 text-gray-600 font-bold mt-2">
-            {description.slice(0, 95) + "..."}
+            {description?.slice(0, 92) + "..."}
           </p>
-          <div className="flex items-centen justify-between">
-            <p className="font-bold text-xl text-sky-800">
-              Small: ${priceSmall}
-            </p>
+          <div className="flex items-centen justify-between mt-2 mb-2">
             <p className="font-bold text-xl text-sky-800">Large: ${priceBig}</p>
-          </div>
-          <span className="text-xl font-bold block text-orange-500 mt-2">
+          <p className="text-xl font-bold block text-orange-500">
             Ratings: {rating}
-          </span>
+          </p>
+          </div>
+          
           <Link
                 to={`/services/${_id}`}
                 aria-label=""

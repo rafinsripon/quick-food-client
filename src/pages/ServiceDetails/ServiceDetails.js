@@ -6,6 +6,7 @@ import author from "../../Assets/Images/author.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import useTitle from "../../hooks/UseTitle";
+import avater from "../../Assets/Images/avater.jpg"
 
 const ServiceDetails = () => {
   const details = useLoaderData();
@@ -30,7 +31,8 @@ const ServiceDetails = () => {
       message,
       rating,
       priceBig,
-      priceSmall
+      priceSmall,
+      time: new Date().toLocaleString(),
     }
     // console.log(reviews)
     fetch('http://localhost:5000/reviews', {
@@ -49,6 +51,7 @@ const ServiceDetails = () => {
       // console.log('reviews-data:', data);
     })
   };
+
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
@@ -128,7 +131,7 @@ const ServiceDetails = () => {
             <div className="flex space-x-4 items-center">
               <div>
                 <img
-                  src={user?.photoURL}
+                  src={user?.photoURL ? user?.photoURL : `${avater}`}
                   alt=""
                   className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
                 />

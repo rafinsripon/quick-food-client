@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import logo from "../../../Assets/Images/logo1.png";
+import avater from "../../../Assets/Images/avater.jpg"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +67,9 @@ const Header = () => {
                   Blog
                 </Link>
               </li>
-              <li>
+              {user?.email &&
+                <>
+                <li>
                 <Link
                   to="/myreview"
                   aria-label="Our product"
@@ -86,19 +89,21 @@ const Header = () => {
                   Add Services
                 </Link>
               </li>
+                </>
+              }
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <div className="flex items-center gap-4">
-                {user?.uid ? (
+                {user?.email ? (
                   <>
                     <span className="text-xl font-bold">
                       {user?.displayName}
                     </span>
                     <img
                       className="w-10 h-10 rounded-full border-2 border-pink-600 cursor-pointer"
-                      src={user?.photoURL}
+                      src={user?.photoURL ? user?.photoURL : `${avater}`}
                       alt=""
                     />
                     <button
@@ -240,7 +245,7 @@ const Header = () => {
                       </li>
                       <li>
                         <div className="flex items-center gap-4">
-                          {user?.uid ? (
+                        {user?.email ? (
                             <>
                               <span className="text-xl font-bold">
                                 {user?.displayName}

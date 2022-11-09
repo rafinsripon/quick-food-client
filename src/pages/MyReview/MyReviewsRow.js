@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import avater from "../../Assets/Images/avater.jpg"
 
-
-const MyReviewsRow = ({ reviews, handleDelete, handleUpdate }) => {
+const MyReviewsRow = ({ reviews, handleDelete }) => {
   const {
     _id,
     photo,
@@ -11,20 +11,18 @@ const MyReviewsRow = ({ reviews, handleDelete, handleUpdate }) => {
     message,
     image,
     priceBig,
-    priceSmall,
     rating,
     serviceName,
   } = reviews;
 
-
   return (
-    <div className="mt-6 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 w-full mb-10">
+    <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 w-full mb-10">
       <div className="container lg:px-12 px-0 flex flex-col w-full max-w-2xl p-3 divide-y divide-gray-700 dark:text-gray-900 border-4 border-gray-300 rounded-3xl">
         <div className="flex justify-between p-2">
           <div className="flex space-x-4 items-center">
             <div>
               <img
-                src={photo}
+                src={photo ? photo : `${avater}`}
                 alt=""
                 className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
               />
@@ -48,26 +46,32 @@ const MyReviewsRow = ({ reviews, handleDelete, handleUpdate }) => {
           </div>
         </div>
         <div className="p-4 space-y-2 text-sm dark:text-gray-400">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-4">
             <img className="w-14 h-14 rounded-2xl" src={image} alt="" />
             <div className="flex justify-between">
-            <div className="">
-                <h2 className="text-xl font-bold text-slate-900">{serviceName}</h2>
+              <div className="">
+                <h2 className="text-xl font-bold text-slate-900">
+                  {serviceName}
+                </h2>
                 <div className="flex  items-center gap-8">
-                <span className="text-lg font-bold text-sky-600">small: ${priceSmall}</span>
-                <p className="text-lg font-bold text-sky-600">Large: ${priceBig}</p>
+                  <p className="text-lg font-bold text-sky-600">
+                    Large: ${priceBig}
+                  </p>
                 </div>
-			</div>
+              </div>
             </div>
-            </div>
+          </div>
           <p className="pb-4 lg:text-lg text-base font-bold">{message}</p>
           <div className="flex justify-between mt-8 gap-4">
             <Link to={`/updated/${_id}`}>
-            <button className="bg-sky-600 py-3 px-12 font-bold text-gray-100 rounded-3xl">
-              Update
-            </button>
+              <button className="bg-sky-600 py-3 px-12 font-bold text-gray-100 rounded-3xl">
+                Update
+              </button>
             </Link>
-            <button onClick={() => handleDelete(_id)} className="bg-rose-700 py-3 px-12 font-bold text-gray-100 rounded-3xl">
+            <button
+              onClick={() => handleDelete(_id)}
+              className="bg-rose-700 py-3 px-12 font-bold text-gray-100 rounded-3xl"
+            >
               Delete
             </button>
           </div>

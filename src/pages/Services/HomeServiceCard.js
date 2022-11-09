@@ -18,13 +18,13 @@ const HomeServiceCard = ({ service }) => {
         <p className="mb-2 font-bold text-gray-600 mt-2">
           {description.slice(0, 95) + "..."}
         </p>
-        <div className="flex items-centen justify-between mt-2">
-          <p className="font-bold text-xl text-sky-800">Small: ${priceSmall}</p>
-          <p className="font-bold text-lg text-sky-800">Large: ${priceBig}</p>
-        </div>
-        <span className="text-xl font-bold block text-orange-500 mt-2">
-          Ratings: {rating}
-        </span>
+        <div className="flex items-centen justify-between mt-2 mb-2">
+            <p className="font-bold text-xl text-sky-800">Large: ${priceBig}</p>
+          <p className="text-xl font-bold block text-orange-500">
+            Ratings: {rating}
+          </p>
+          </div>
+        
         <Link
           to={`/services/${_id}`}
           aria-label=""

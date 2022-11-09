@@ -27,8 +27,6 @@ const MyReview = () => {
   }, [user?.email, logOut]);
 
   //revirews
-
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -56,21 +54,6 @@ const MyReview = () => {
     });
   };
 
-  
-
-  //   const handleUpdate = (id) => {
-  //     fetch(`http://localhost:5000/reviews/${id}`, {
-  //         method: 'PUT',
-  //         headers: {
-  //             'content-type': 'application/json'
-  //         },
-  //         body: JSON.stringify(reviews)
-  //     })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //         console.log(data)
-  //     })
-  //   }
 
   return (
     <div className="">
@@ -78,13 +61,13 @@ const MyReview = () => {
             reviews.length === 0 && 
             <p className="text-4xl font-bold text-uppercase text-rose-700 text-center mt-4 mb-4">No reviews were added</p>
         }
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-12">
         {reviews?.map((reviews) => (
           <MyReviewsRow
             key={reviews._id}
             reviews={reviews}
             handleDelete={handleDelete}
-            handleUpdate={"handleUpdate"}
+            
           />
         ))}
       </div>
