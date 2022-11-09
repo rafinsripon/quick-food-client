@@ -6,17 +6,17 @@ import author from "../../Assets/Images/author.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import useTitle from "../../hooks/UseTitle";
-import avater from "../../Assets/Images/avater.jpg";
 import AllReviews from "./AllReviews";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
-  const { _id, image, name, description, priceBig, priceSmall, rating } =
-    details;
   const [reviewsService, setReviewsService] = useState([]);
+  const { _id, image, name, description, priceBig, priceSmall, rating, service } =
+    details;
 
   useTitle("services details");
+
 
   const handlePlaceOrder = (event) => {
     event.preventDefault();
@@ -37,8 +37,10 @@ const ServiceDetails = () => {
       priceSmall,
       time: new Date().toLocaleString(),
     };
+
+    
     // console.log(reviews)
-    fetch("http://localhost:5000/reviews", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,19 +49,22 @@ const ServiceDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('reviews-data:', data);
+        const newuser = [...reviewsService, data]
+        setReviewsService(newuser)
         if (data.acknowledged) {
           toast("🦄 Wow Success Fully reviews added!", { autoClose: 500 });
           form.reset();
         }
-        // console.log('reviews-data:', data);
-      });
+      }); 
   };
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/review`)
+  fetch('http://localhost:5000/review')
       .then((res) => res.json())
-      .then((data) => setReviewsService(data));
-  }, []);
+      .then((data) => {
+        setReviewsService(data)
+    });
+
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
@@ -160,6 +165,7 @@ const ServiceDetails = () => {
                         name="message"
                         className="textarea text-xl h-32 rounded-md textarea-bordered w-full border-2 border-gray-500"
                         placeholder="Type Your Review"
+                        required
                       ></textarea>
                     </>
                   ) : (

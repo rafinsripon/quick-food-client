@@ -4,11 +4,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '../../Assets/Images/Screenshot_25-removebg-preview.png'
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/UseTitle';
+import { setAuthToken } from '../../ulits/Auth';
 
 const Register = () => {
-    const {createUser, signWithGoogle, updateUseProfile} = useContext(AuthContext);
+    const {createUser, signWithGoogle, updateUseProfile, loading} = useContext(AuthContext);
     const navigate = useNavigate();
     useTitle('register')
+
+    if(loading) {
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 mx-auto text-center mt-10"></div>
+    }
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -22,6 +28,7 @@ const Register = () => {
         .then((result) => {
             const user = result.user;
             form.reset();
+            setAuthToken(user)
             navigate('/');
             handleUpdateUserProfile(name)
             console.log('Sign Up Success:', user);
@@ -48,8 +55,8 @@ const Register = () => {
         signWithGoogle()
         .then((result) => {
             const user = result.user;
+            setAuthToken(user)
             navigate('/')
-            console.log('Google Sign Up Success:', user);
         })
         .catch((error) => {
             const errorMessage = error.message;

@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import useTitle from "../../hooks/UseTitle";
 
 const AddServices = () => {
-  // const services = useLoaderData()
-  // // const [services, setService] = useState(servicesU)
-
-  // // useEffect(() => {
-  // //   fetch('http://localhost:5000/services')
-  // //   .then(res => res.json())
-  // //   .then(data => setService(data))
-  // // },[])
-
+  useTitle('add services')
 
   const handleServiceAdd = (event) => {
     event.preventDefault();
@@ -32,11 +26,9 @@ const AddServices = () => {
         })
         .then(res => res.json())
         .then(data => {
-          // console.log(data)
-          
           if(data.acknowledged){
-            // service.push()
-            alert('added')
+            form.reset();
+            toast.success('Seccess fully added')
           }
         })
   }
@@ -110,6 +102,7 @@ const AddServices = () => {
             name="name"
             placeholder="Sercice Name"
             className="input input-bordered input-info w-full"
+            required
           />
         </div>
         <div className="lg:flex flex-wrap gap-4 justify-between mt-4">
@@ -119,6 +112,7 @@ const AddServices = () => {
               name="priceBig"
               placeholder="service price"
               className="input input-bordered input-info w-full"
+              required
             />
           </div>
           <div className="lg:w-[45%] w-full lg:pt-0 pt-4">
@@ -127,6 +121,7 @@ const AddServices = () => {
               name="rating"
               placeholder="service rating"
               className="input input-bordered input-info w-full"
+              required
             />
           </div>
         </div>
@@ -136,6 +131,7 @@ const AddServices = () => {
             name="image"
             placeholder="photo url"
             className="input input-bordered input-info w-full"
+            required
           />
         </div>
         <div className="mt-4">
@@ -144,6 +140,7 @@ const AddServices = () => {
           name="description"
             className="textarea textarea-info w-full h-[170px]"
             placeholder="service description"
+            required
           ></textarea>
         </div>
         <div className="pt-8 pb-8">

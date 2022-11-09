@@ -4,7 +4,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 const HomeServiceCard = ({ service }) => {
-  const { _id, image, name, description, priceBig, priceSmall, rating } =
+  const { _id, image, name, description, priceBig, rating } =
     service;
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm mb-8">

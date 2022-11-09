@@ -4,13 +4,18 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../Assets/Images/Screenshot_25-removebg-preview.png'
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/UseTitle';
+import { setAuthToken } from '../../ulits/Auth';
 
 const Login = () => {
-    const {logIn, signWithGoogle} = useContext(AuthContext);
+    const {logIn, signWithGoogle, loading} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     useTitle('login');
+
+    if(loading) {
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 mx-auto text-center mt-10"></div>
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -55,8 +60,9 @@ const Login = () => {
         signWithGoogle()
         .then((result) => {
             const user = result.user;
+            //jwt token
+            setAuthToken(user)
             navigate(from, { replace: true });
-            console.log('Google Login Success:', user);
         })
         .catch((error) => {
             const errorMessage = error.message;

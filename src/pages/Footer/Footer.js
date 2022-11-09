@@ -1,4 +1,5 @@
 import React from 'react';
+import footer from '../../Assets/Images/logo1.png'
 
 const Footer = () => {
     return (
@@ -22,23 +23,9 @@ const Footer = () => {
                 title="Company"
                 className="inline-flex items-center"
               >
-                <svg
-                  className="w-8 text-gray-400"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  stroke="currentColor"
-                  fill="none"
-                >
-                  <rect x="3" y="1" width="7" height="12" />
-                  <rect x="3" y="17" width="7" height="6" />
-                  <rect x="14" y="1" width="7" height="6" />
-                  <rect x="14" y="11" width="7" height="12" />
-                </svg>
+                <img src={footer} alt="" />
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                  Company
+                  Quick Food
                 </span>
               </a>
               <div className="mt-4 lg:max-w-sm">
@@ -55,7 +42,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
               <div>
                 <p className="font-semibold tracking-wide text-gray-100">
-                  Category
+                  Services
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -63,7 +50,7 @@ const Footer = () => {
                       href="/"
                       className="transition-colors duration-300 text-gray-100 hover:text-sky-500"
                     >
-                      News
+                      Items
                     </a>
                   </li>
                   <li>
@@ -71,7 +58,7 @@ const Footer = () => {
                       href="/"
                       className="transition-colors duration-300 text-gray-100 hover:text-sky-500"
                     >
-                      World
+                      Foods
                     </a>
                   </li>
                   <li>
@@ -79,7 +66,7 @@ const Footer = () => {
                       href="/"
                       className="transition-colors duration-300 text-gray-100 hover:text-sky-500"
                     >
-                      Games
+                      Healthy
                     </a>
                   </li>
                   <li>
@@ -94,7 +81,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold tracking-wide text-teal-accent-400">
-                  Cherry
+                  Works
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -102,7 +89,7 @@ const Footer = () => {
                       href="/"
                       className="transition-colors duration-300 text-gray-100 hover:text-sky-500"
                     >
-                      Web
+                      Foods
                     </a>
                   </li>
                   <li>
@@ -229,7 +216,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-200 sm:flex-row">
             <p className="text-sm text-gray-100">
-              © Copyright 2020 Lorem Inc. All rights reserved.
+              © Copyright 2020 Quick Food. All rights reserved.
             </p>
             <div className="flex items-center mt-4 space-x-4 sm:mt-0">
               <a

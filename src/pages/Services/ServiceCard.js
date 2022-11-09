@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
+
 const ServiceCard = ({ service }) => {
   const {_id, image, name, description, priceBig, rating } = service;
-
   return (
     <div className="">
       <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm mb-8">

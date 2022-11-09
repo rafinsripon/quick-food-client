@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 import useTitle from "../../hooks/UseTitle";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const services = useLoaderData()
   useTitle('services')
+  const {loading} = useContext(AuthContext)
+
+  //Loading for services
+  if(loading) {
+    return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 mx-auto text-center mt-10"></div>
+}
+
   return (
     <div className="mt-14 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">

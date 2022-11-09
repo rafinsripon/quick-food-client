@@ -64,8 +64,8 @@ const MyReviewsRow = ({ reviews, handleDelete }) => {
           <p className="pb-4 lg:text-lg text-base font-bold">{message}</p>
           <div className="flex justify-between mt-8 gap-4">
             <Link to={`/updated/${_id}`}>
-              <button className="bg-sky-600 py-3 px-12 font-bold text-gray-100 rounded-3xl">
-                Update
+              <button className="bg-sky-600 py-3 px-10 font-bold text-gray-100 rounded-3xl">
+                Edit
               </button>
             </Link>
             <button
