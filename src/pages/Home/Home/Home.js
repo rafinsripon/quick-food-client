@@ -4,6 +4,8 @@ import HomeService from '../../Services/HomeService';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Descover from '../Descover/Descover';
+import Feature from '../Feature/Feature';
+import OrderFood from '../OrderFood/OrderFood';
 
 const Home = () => {
     useTitle('Home')
@@ -13,6 +15,8 @@ const Home = () => {
             <HomeService />
             <About />
             <Descover />
+            <Feature />
+            <OrderFood />
         </div>
     );
 };

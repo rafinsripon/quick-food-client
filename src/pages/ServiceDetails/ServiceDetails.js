@@ -9,13 +9,14 @@ import useTitle from "../../hooks/UseTitle";
 import AllReviews from "./AllReviews";
 
 const ServiceDetails = () => {
-  const details = useLoaderData();
+  const service = useLoaderData();
   const { user } = useContext(AuthContext);
   const [reviewsService, setReviewsService] = useState([]);
-  const { _id, image, name, description, priceBig, priceSmall, rating, service } =
-    details;
+  const { _id, image, name, description, priceBig, priceSmall, rating } =
+    service;
 
   useTitle("services details");
+
 
 
   const handlePlaceOrder = (event) => {
@@ -40,7 +41,7 @@ const ServiceDetails = () => {
 
     
     // console.log(reviews)
-    fetch("http://localhost:5000/review", {
+    fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -50,21 +51,21 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log('reviews-data:', data);
-        const newuser = [...reviewsService, data]
-        setReviewsService(newuser)
         if (data.acknowledged) {
-          toast("🦄 Wow Success Fully reviews added!", { autoClose: 500 });
-          form.reset();
+          const newuser = [...reviewsService, data]
+          setReviewsService(newuser)
+          toast.success('Sucessfully reviews added', {autoClose: 500})
+          form.reset()
         }
       }); 
   };
 
-  fetch('http://localhost:5000/review')
-      .then((res) => res.json())
-      .then((data) => {
-        setReviewsService(data)
-    });
-
+  fetch(`http://localhost:5000/review?id=${service._id}`)
+  .then(res => res.json())
+  .then(data => {
+    return setReviewsService(data)
+  })
+  
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
