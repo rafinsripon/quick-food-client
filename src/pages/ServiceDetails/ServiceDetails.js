@@ -63,6 +63,7 @@ const ServiceDetails = () => {
   fetch(`http://localhost:5000/review?id=${service._id}`)
   .then(res => res.json())
   .then(data => {
+    console.log(data)
     return setReviewsService(data)
   })
   
@@ -130,9 +131,6 @@ const ServiceDetails = () => {
             </div>
             <div className="flex space-x-2 text-sm gap-5 dark:text-gray-400">
               <span className="text-xl font-bold text-sky-600">
-                small price: ${priceSmall}
-              </span>
-              <span className="text-xl font-bold text-sky-600">
                 Large Price: ${priceBig}
               </span>
             </div>
@@ -149,6 +147,7 @@ const ServiceDetails = () => {
             {reviewsService?.map((reviews) => (
               <AllReviews key={reviews._id} reviews={reviews} />
             ))}
+            {reviewsService.length === 0 && <p className="text-3xl font-bold text-rose-700">No Reviews were Added! Please Reviews</p>}
           </div>}
           <div className="flex flex-col">
             <div className="lg:w-[70%] w-full">

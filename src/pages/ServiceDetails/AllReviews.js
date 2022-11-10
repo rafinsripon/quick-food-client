@@ -1,4 +1,5 @@
 import React from "react";
+import avater from '../../Assets/Images/avater.jpg'
 
 const AllReviews = ({ reviews }) => {
   const { photo, message, image, email, name, priceBig, rating, serviceName } =
@@ -9,7 +10,7 @@ const AllReviews = ({ reviews }) => {
         <div className="border-b-2 border-gray-400 flex items-center gap-4 py-2">
           <img
             className="w-12 h-12 rounded-full border-2 border-sky-700"
-            src={photo}
+            src={photo ? photo : `${avater}`}
             alt=""
           />
           <div>
