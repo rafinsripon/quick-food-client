@@ -3,7 +3,7 @@
 A Beautifull online Quick Food Home website Design And Development, Beautifull Header, Footer, bolg, Services, Reviews etc and other nice sections, This website Is fully Responsive.
 
 ## 🔗  Website Live Link::
-### Hosted in FireBase::- [Quick-Food]()
+### Hosted in FireBase::- [Quick-Food](https://quick-food-fc463.web.app/)
 
 ## 🔗 All Resources & Credits::
 ### tailwindcss Link::- [tailwindcss](https://tailwindcss.com/docs/installation)
@@ -12,7 +12,7 @@ A Beautifull online Quick Food Home website Design And Development, Beautifull H
 ### Mambaui Link::- [mambaui](https://www.mambaui.com/)
 ### React Router dom V6.4::- [React Router Dom](https://reactrouter.com/en/main)
 ### FireBase Link::- [firebase](https://firebase.google.com/)
-### Verlcel Link::- [vercerl](https://vercel.com/)
+### Verlcel Link::- [vercel](https://vercel.com/)
 ### Node Link::- [Node](https://nodejs.org/en/)
 ### Express Link::- [Express](https://expressjs.com/)
 
