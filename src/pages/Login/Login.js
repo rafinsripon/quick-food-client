@@ -34,7 +34,7 @@ const Login = () => {
             }
             console.log('jwtCurrentUser:', currentUser);
 
-            fetch('http://localhost:5000/jwt', {
+            fetch('https://quick-food-server.vercel.app/jwt', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

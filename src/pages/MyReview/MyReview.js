@@ -10,7 +10,7 @@ const MyReview = () => {
   useTitle('my reviews')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://quick-food-server.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("food-token")}`,
       },
@@ -39,7 +39,7 @@ const MyReview = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "success");
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://quick-food-server.vercel.app/reviews/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

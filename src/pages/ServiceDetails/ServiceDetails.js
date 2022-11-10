@@ -17,8 +17,6 @@ const ServiceDetails = () => {
 
   useTitle("services details");
 
-
-
   const handlePlaceOrder = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -39,9 +37,8 @@ const ServiceDetails = () => {
       time: new Date().toLocaleString(),
     };
 
-    
     // console.log(reviews)
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://quick-food-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -50,23 +47,22 @@ const ServiceDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log('reviews-data:', data);
+        console.log("reviews-data:", data);
         if (data.acknowledged) {
-          const newuser = [...reviewsService, data]
-          setReviewsService(newuser)
-          toast.success('Sucessfully reviews added', {autoClose: 500})
-          form.reset()
+          const newuser = [...reviewsService, data];
+          setReviewsService(newuser);
+          toast.success("Sucessfully reviews added", { autoClose: 500 });
+          form.reset();
         }
-      }); 
+      });
   };
 
-  fetch(`http://localhost:5000/review?id=${service._id}`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    return setReviewsService(data)
-  })
-  
+  fetch(`https://quick-food-server.vercel.app/review?id=${service._id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      return setReviewsService(data);
+    });
 
   return (
     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 mb-10">
@@ -143,12 +139,18 @@ const ServiceDetails = () => {
           Reviews
         </h2>
         <div className="container lg:px-12 px-0 flex flex-col w-full lg:p-6 p-0 divide-y divide-gray-700 dark:text-gray-900">
-          {user && <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {reviewsService?.map((reviews) => (
-              <AllReviews key={reviews._id} reviews={reviews} />
-            ))}
-            {reviewsService.length === 0 && <p className="text-3xl font-bold text-rose-700">No Reviews were Added! Please Reviews</p>}
-          </div>}
+          {user && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {reviewsService?.map((reviews) => (
+                <AllReviews key={reviews._id} reviews={reviews} />
+              ))}
+              {reviewsService.length === 0 && (
+                <p className="text-3xl font-bold text-rose-700">
+                  No Reviews were Added! Please Reviews
+                </p>
+              )}
+            </div>
+          )}
           <div className="flex flex-col">
             <div className="lg:w-[70%] w-full">
               <form onSubmit={handlePlaceOrder}>
@@ -171,7 +173,11 @@ const ServiceDetails = () => {
                   ) : (
                     <>
                       <p className="text-4xl font-bold text-rose-700 mt-2 mb-4">
-                        Please! <Link to='/login' className="underline text-sky-700">Login</Link> to add a review.
+                        Please!{" "}
+                        <Link to="/login" className="underline text-sky-700">
+                          Login
+                        </Link>{" "}
+                        to add a review.
                       </p>
                     </>
                   )}

@@ -12,7 +12,7 @@ const Updated = () => {
   const handleUpdateUser = (event) => {
     event.preventDefault();
     console.log(user);
-    fetch(`http://localhost:5000/reviews/${storeUser._id}`, {
+    fetch(`https://quick-food-server.vercel.app/reviews/${storeUser._id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
