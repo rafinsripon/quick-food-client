@@ -10,6 +10,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  //Handle LogOUt
   const handleLogOut = () => {
     logOut()
       .then(() => {

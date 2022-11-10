@@ -11,11 +11,12 @@ const Register = () => {
     const navigate = useNavigate();
     useTitle('register')
 
+    //Loading For login page
     if(loading) {
         return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 mx-auto text-center mt-10"></div>
     }
     
-
+    //handle register
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;

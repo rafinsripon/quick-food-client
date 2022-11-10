@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import order from "../../../Assets/Images/order.jpg";
 
 const OrderFood = () => {
@@ -11,7 +12,7 @@ const OrderFood = () => {
             Simple Way to <br /> Order Food
           </h2>
           <div className="flex lg:flex-row flex-col  items-center space-x-3 pt-14">
-            <a
+            <Link
               href="/"
               className="lg:w-40 w-60 transition duration-300 hover:shadow-lg"
             >
@@ -20,8 +21,8 @@ const OrderFood = () => {
                 className="object-cover object-top w-full h-auto mx-auto"
                 alt=""
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               className="lg:w-40 w-60 transition duration-300 hover:shadow-lg lg:pt-0 pt-4"
             >
@@ -30,7 +31,7 @@ const OrderFood = () => {
                 className="object-cover object-top w-full h-auto mx-auto"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

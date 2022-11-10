@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import HomeServiceCard from "./HomeServiceCard";
 
 const HomeService = () => {
+  
   const [service, setServices] = useState([]);
   useEffect(() => {
     fetch("https://quick-food-server.vercel.app/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
+
   return (
     <div className="mt-14 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">

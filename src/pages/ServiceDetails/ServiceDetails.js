@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import bannerD from "../../Assets/Images/details.jpg";
 import { FcNext } from "react-icons/fc";
